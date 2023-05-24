@@ -12,5 +12,23 @@ export const createUser = async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 };
+//log in user
 
+export const login = (req, res) => {
+  try {
+    
+  } catch (error) {
+    res.status(500).json({ message: "somthing wrong" })
+  }
+}
+
+// get all users also using pagination using limit and skip that's part of aggregation
+export const getUser = async (req, res) => {
+  try {
+    let data = await userModel.find().skip((page - 1) * 2).limit(2);
+    res.status(200).json({message: data})
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+}
 

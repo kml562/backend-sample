@@ -1,8 +1,8 @@
 
 export const checkCrad = (req, res, next) => { 
     try {
-        const { name, email, password } = req.body;
-        if (!name && !email && !password) {
+        const { name, mobile,  address } = req.body;
+        if (!name && !mobile && !address) {
             return res.status(401).json({message:"fill all the info is required"});
         }
         next();
